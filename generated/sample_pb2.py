@@ -12,9 +12,10 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0csample.proto\x12\x06sample\")\n\x06\x46ilter\x12\t\n\x01k\x18\x01 \x01(\t\x12\t\n\x01v\x18\x02 \x01(\t\x12\t\n\x01o\x18\x03 \x01(\t\"1\n\x0fStatisticsQuery\x12\x1e\n\x06\x66ilter\x18\x01 \x03(\x0b\x32\x0e.sample.Filter\"x\n\x0fStatisticsReply\x12\x35\n\x07results\x18\x01 \x03(\x0b\x32$.sample.StatisticsReply.ResultsEntry\x1a.\n\x0cResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x32G\n\x0b\x43ostService\x12\x38\n\x04Stat\x12\x17.sample.StatisticsQuery\x1a\x17.sample.StatisticsReplyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0csample.proto\x12\x06sample\x1a\x1cgoogle/protobuf/struct.proto\")\n\x06\x46ilter\x12\t\n\x01k\x18\x01 \x01(\t\x12\t\n\x01v\x18\x02 \x01(\t\x12\t\n\x01o\x18\x03 \x01(\t\"1\n\x0fStatisticsQuery\x12\x1e\n\x06\x66ilter\x18\x01 \x03(\x0b\x32\x0e.sample.Filter\"x\n\x0fStatisticsReply\x12\x35\n\x07results\x18\x01 \x03(\x0b\x32$.sample.StatisticsReply.ResultsEntry\x1a.\n\x0cResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\"\x19\n\x08SumReply\x12\r\n\x05total\x18\x01 \x01(\x01\x32\x87\x03\n\x0b\x43ostService\x12\x38\n\x04Stat\x12\x17.sample.StatisticsQuery\x1a\x17.sample.StatisticsReply\x12;\n\tEchoValue\x12\x16.google.protobuf.Value\x1a\x16.google.protobuf.Value\x12>\n\nEchoStruct\x12\x17.google.protobuf.Struct\x1a\x17.google.protobuf.Struct\x12\x35\n\x08SumCosts\x12\x17.google.protobuf.Struct\x1a\x10.sample.SumReply\x12\x44\n\x10\x46ilterByProvider\x12\x17.google.protobuf.Struct\x1a\x17.google.protobuf.Struct\x12\x44\n\x10\x45\x63hoStructAsJson\x12\x17.google.protobuf.Struct\x1a\x17.google.protobuf.Structb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,14 +24,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_STATISTICSREPLY_RESULTSENTRY']._loaded_options = None
   _globals['_STATISTICSREPLY_RESULTSENTRY']._serialized_options = b'8\001'
-  _globals['_FILTER']._serialized_start=24
-  _globals['_FILTER']._serialized_end=65
-  _globals['_STATISTICSQUERY']._serialized_start=67
-  _globals['_STATISTICSQUERY']._serialized_end=116
-  _globals['_STATISTICSREPLY']._serialized_start=118
-  _globals['_STATISTICSREPLY']._serialized_end=238
-  _globals['_STATISTICSREPLY_RESULTSENTRY']._serialized_start=192
-  _globals['_STATISTICSREPLY_RESULTSENTRY']._serialized_end=238
-  _globals['_COSTSERVICE']._serialized_start=240
-  _globals['_COSTSERVICE']._serialized_end=311
+  _globals['_FILTER']._serialized_start=54
+  _globals['_FILTER']._serialized_end=95
+  _globals['_STATISTICSQUERY']._serialized_start=97
+  _globals['_STATISTICSQUERY']._serialized_end=146
+  _globals['_STATISTICSREPLY']._serialized_start=148
+  _globals['_STATISTICSREPLY']._serialized_end=268
+  _globals['_STATISTICSREPLY_RESULTSENTRY']._serialized_start=222
+  _globals['_STATISTICSREPLY_RESULTSENTRY']._serialized_end=268
+  _globals['_SUMREPLY']._serialized_start=270
+  _globals['_SUMREPLY']._serialized_end=295
+  _globals['_COSTSERVICE']._serialized_start=298
+  _globals['_COSTSERVICE']._serialized_end=689
 # @@protoc_insertion_point(module_scope)

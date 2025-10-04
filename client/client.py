@@ -1,4 +1,5 @@
 import grpc
+from google.protobuf import struct_pb2, json_format
 import generated.sample_pb2 as sample_pb2
 import generated.sample_pb2_grpc as sample_pb2_grpc
 
@@ -8,8 +9,7 @@ def run():
         query = sample_pb2.StatisticsQuery(
             filter=[sample_pb2.Filter(k="provider", v="azure", o="eq")]
         )
-        response = stub.Stat(query)
-        print("서버 응답:", response.results)
+        print("Stat:", stub.Stat(query).results)
 
 if __name__ == "__main__":
     run()

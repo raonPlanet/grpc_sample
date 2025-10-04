@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from . import sample_pb2 as sample__pb2
 
 GRPC_GENERATED_VERSION = '1.64.1'
@@ -44,12 +45,67 @@ class CostServiceStub(object):
                 request_serializer=sample__pb2.StatisticsQuery.SerializeToString,
                 response_deserializer=sample__pb2.StatisticsReply.FromString,
                 _registered_method=True)
+        self.EchoValue = channel.unary_unary(
+                '/sample.CostService/EchoValue',
+                request_serializer=google_dot_protobuf_dot_struct__pb2.Value.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_struct__pb2.Value.FromString,
+                _registered_method=True)
+        self.EchoStruct = channel.unary_unary(
+                '/sample.CostService/EchoStruct',
+                request_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                _registered_method=True)
+        self.SumCosts = channel.unary_unary(
+                '/sample.CostService/SumCosts',
+                request_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+                response_deserializer=sample__pb2.SumReply.FromString,
+                _registered_method=True)
+        self.FilterByProvider = channel.unary_unary(
+                '/sample.CostService/FilterByProvider',
+                request_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                _registered_method=True)
+        self.EchoStructAsJson = channel.unary_unary(
+                '/sample.CostService/EchoStructAsJson',
+                request_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                _registered_method=True)
 
 
 class CostServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Stat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoValue(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoStruct(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SumCosts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FilterByProvider(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EchoStructAsJson(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -62,6 +118,31 @@ def add_CostServiceServicer_to_server(servicer, server):
                     servicer.Stat,
                     request_deserializer=sample__pb2.StatisticsQuery.FromString,
                     response_serializer=sample__pb2.StatisticsReply.SerializeToString,
+            ),
+            'EchoValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoValue,
+                    request_deserializer=google_dot_protobuf_dot_struct__pb2.Value.FromString,
+                    response_serializer=google_dot_protobuf_dot_struct__pb2.Value.SerializeToString,
+            ),
+            'EchoStruct': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoStruct,
+                    request_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                    response_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            ),
+            'SumCosts': grpc.unary_unary_rpc_method_handler(
+                    servicer.SumCosts,
+                    request_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                    response_serializer=sample__pb2.SumReply.SerializeToString,
+            ),
+            'FilterByProvider': grpc.unary_unary_rpc_method_handler(
+                    servicer.FilterByProvider,
+                    request_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                    response_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            ),
+            'EchoStructAsJson': grpc.unary_unary_rpc_method_handler(
+                    servicer.EchoStructAsJson,
+                    request_deserializer=google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+                    response_serializer=google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -91,6 +172,141 @@ class CostService(object):
             '/sample.CostService/Stat',
             sample__pb2.StatisticsQuery.SerializeToString,
             sample__pb2.StatisticsReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EchoValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sample.CostService/EchoValue',
+            google_dot_protobuf_dot_struct__pb2.Value.SerializeToString,
+            google_dot_protobuf_dot_struct__pb2.Value.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EchoStruct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sample.CostService/EchoStruct',
+            google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SumCosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sample.CostService/SumCosts',
+            google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            sample__pb2.SumReply.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def FilterByProvider(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sample.CostService/FilterByProvider',
+            google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            google_dot_protobuf_dot_struct__pb2.Struct.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EchoStructAsJson(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/sample.CostService/EchoStructAsJson',
+            google_dot_protobuf_dot_struct__pb2.Struct.SerializeToString,
+            google_dot_protobuf_dot_struct__pb2.Struct.FromString,
             options,
             channel_credentials,
             insecure,

@@ -1,20 +1,31 @@
 syntax = "proto3";
 
 package sample;
+import "google/protobuf/struct.proto";
 
-service CostService{
-    rpc Stat(StatisticsQuery) returns (StatisticsReply);
+service CostService {
+  rpc Stat (StatisticsQuery) returns (StatisticsReply);
+  rpc EchoValue (google.protobuf.Value) returns (google.protobuf.Value);
+  rpc EchoStruct (google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc SumCosts (google.protobuf.Struct) returns (SumReply);
+  rpc FilterByProvider (google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc EchoStructAsJson (google.protobuf.Struct) returns (google.protobuf.Struct);
 }
 
-message Filter {    
-    string k= 1;
-    string v = 2;
-    string o = 3;
-}
-message StatisticsQuery{
-    repeated Filter filter = 1;
+message Filter {
+  string k = 1;
+  string v = 2;
+  string o = 3;
 }
 
-message StatisticsReply{
-    map<string,double> results = 1;
+message StatisticsQuery {
+  repeated Filter filter = 1;
+}
+
+message StatisticsReply {
+  map<string, double> results = 1;
+}
+
+message SumReply {
+  double total = 1;
 }
